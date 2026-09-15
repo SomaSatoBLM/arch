@@ -73,7 +73,7 @@ sudo -u temp mkdir -p /tmp/yay && cd /tmp/yay && sudo -u temp git clone https://
 #rustup update
 #sudo -u temp yay -S python2-bin --noconfirm
 #sudo -u temp yay -S ogmrip-ac3 --noconfirm
-sudo -u temp yay -S cider --noconfirm
+#sudo -u temp yay -S cider --noconfirm
 sudo -u temp yay -S uxplay --noconfirm
 sudo -u temp yay -S brother-hl-l3210cw --noconfirm
 sudo -u temp yay -S ttf-ms-fonts --noconfirm
