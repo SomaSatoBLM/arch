@@ -182,7 +182,111 @@ Name=Discord Custom Autostart
 Comment=Launch Discord minimized on boot without app interference.
 END
 
+touch /home/$username/.config/autostart/scream.sh.desktop
+tee -a /home/$username/.config/autostart/scream.sh.desktop << END
+[Desktop Entry]
+Exec=/home/soma/scream.sh
+Icon=
+Name=scream.sh
+Path=
+Terminal=False
+Type=Application
+END
 
+touch /home/$username/.config/autostart/reflector-update.desktop
+tee -a /home/$username/.config/autostart/reflector-update.desktop << END
+[Desktop Entry]
+Comment=
+Comment=
+Exec=reflector-update
+GenericName=
+GenericName=
+Icon=
+MimeType=
+Name=reflector-update
+Name=reflector-update
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=none
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+END
+
+touch /home/$username/.config/autostart/org.gnome.World.PikaBackup.desktop
+tee -a /home/$username/.config/autostart/org.gnome.World.PikaBackup.desktop << END
+[Desktop Entry]
+Type=Application
+Name=Pika Backup
+X-XDP-Autostart=org.gnome.World.PikaBackup
+Exec=flatpak run --command=pika-backup-monitor org.gnome.World.PikaBackup
+X-Flatpak=org.gnome.World.PikaBackup
+END
+
+
+touch /home/$username/.config/autostart/steam.desktop
+tee -a /home/$username/.config/autostart/steam.desktop << END
+[Desktop Entry]
+Actions=Store;Community;Library;Servers;Screenshots;News;Settings;BigPicture;Friends;
+Categories=Network;FileTransfer;Game;
+Comment[en_US]=Application for managing and playing games on Steam
+Comment=Application for managing and playing games on Steam
+Exec=/usr/bin/steam -silent %U
+GenericName[en_US]=
+GenericName=
+Icon=steam
+MimeType=
+Name[en_US]=Steam
+Name=Steam
+Path=
+PrefersNonDefaultGPU=true
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-RunOnDiscreteGpu=true
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+
+[Desktop Action BigPicture]
+Exec=/usr/bin/steam steam://open/bigpicture
+Name=Big Picture
+
+[Desktop Action Community]
+Exec=/usr/bin/steam steam://url/CommunityHome/
+Name=Community
+
+[Desktop Action Friends]
+Exec=/usr/bin/steam steam://open/friends
+Name=Friends
+
+[Desktop Action Library]
+Exec=/usr/bin/steam steam://open/games
+Name=Library
+
+[Desktop Action News]
+Exec=/usr/bin/steam steam://openurl/https://store.steampowered.com/news
+Name=News
+
+[Desktop Action Screenshots]
+Exec=/usr/bin/steam steam://open/screenshots
+Name=Screenshots
+
+[Desktop Action Servers]
+Exec=/usr/bin/steam steam://open/servers
+Name=Servers
+
+[Desktop Action Settings]
+Exec=/usr/bin/steam steam://open/settings
+Name=Settings
+
+[Desktop Action Store]
+Exec=/usr/bin/steam steam://store
+Name=Store
+END
 
 chsh -s /bin/fish
 pacman-key --init
