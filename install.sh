@@ -147,6 +147,19 @@ initrd initramfs-linux-lts.img
 options root="LABEL=arch" rw
 END
 
+mkdir -p /home/$username/.config/autostart
+touch /home/$username/.config/autostart/discord-custom.desktop
+tee -a /home/$username/.config/autostart/discord-custom.desktop << END
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/discord --start-minimized
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Discord Custom Autostart
+Comment=Launch Discord minimized on boot without app interference.
+END
+
 chsh -s /bin/fish
 pacman-key --init
 pacman-key --populate archlinux
