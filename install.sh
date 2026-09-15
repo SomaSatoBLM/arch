@@ -182,17 +182,6 @@ Name=Discord Custom Autostart
 Comment=Launch Discord minimized on boot without app interference.
 END
 
-touch /home/$username/.config/autostart/scream.sh.desktop
-tee -a /home/$username/.config/autostart/scream.sh.desktop << END
-[Desktop Entry]
-Exec=/home/soma/scream.sh
-Icon=
-Name=scream.sh
-Path=
-Terminal=False
-Type=Application
-END
-
 touch /home/$username/.config/autostart/reflector-update.desktop
 tee -a /home/$username/.config/autostart/reflector-update.desktop << END
 [Desktop Entry]
